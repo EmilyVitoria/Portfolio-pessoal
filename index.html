@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação para UTF-8, para evitar problemas com acentuação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade: ajusta a escala em dispositivos móveis -->
+    <title>Meu Portfólio Pessoal</title> <!-- Título da aba do navegador -->
+    <link rel="stylesheet" href="portfolio.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+  
+<!-- Seção Home com foto, nome e descrição -->
+<section id="home">
+    <!-- Cabeçalho fixo com menu de navegação -->
+    <header>
+        <nav>
+            <ul>
+                <!-- Lista de links do menu, que navegam para as seções da mesma página -->
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobremim">Sobre mim</a></li>
+                <li><a href="#formação">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="home-content">
+        <!-- Foto de perfil, com alt para acessibilidade -->
+        <img src="emily.jpg" alt="Foto de Emily Vitória" class="profile-pic">
+        <!-- Nome principal -->
+        <h1>Emily Muniz</h1>
+        <!-- Descrição / título -->
+        <h2>Estudante de Programação Web & Desenvolvedora iniciante</h2>
+    </div>
+</section>
+
+<main>
+    <!-- Seção Sobre mim -->
+    <section id="sobremim">
+        <h1>Sobre mim</h1> <!-- Título da seção -->
+        <!-- Apresentação pessoal -->
+        <p>Olá! Meu nome é Emily Vitória. Sou estudante de programação, com 19 anos, e estou aprendendo HTML e CSS!</p>  
+        <p>Atualmente, estou trilhando meu caminho na área da programação, buscando sempre aprender e evoluir. No tempo livre, me divido entre partidas de videogame, boas maratonas de séries e filmes, treinos de vôlei e sessões na academia. Quando a vibe é foco total, gosto de mergulhar nos estudos — seja para concursos ou pra me aperfeiçoar na área de TI.</p>
+    </section>
+
+    <!-- Seção Formação acadêmica -->
+    <section id="formação">
+        <h1>Minha Formação</h1> <!-- Título da seção -->
+        <!-- Listagem da formação acadêmica e idiomas -->
+        <p>🎓 Graduanda em Análise e Desenvolvimento de Sistemas – UNINTER</p>
+        <p>🎓 Ensino Médio Técnico em Administração – Concluído</p>
+        <p>🌐 Inglês – Nível Intermediário (em constante evolução!)</p>
+    </section>
+
+    <!-- Seção Portfólio com links para projetos -->
+    <section id="portfolio">
+        <h1>Meu Portfólio</h1> <!-- Título da seção -->
+        <div class="github-projects">
+            <div class="github-link">
+                <!-- Link para o GitHub com ícone e texto estilizados -->
+                <a href="https://github.com/EmilyVitoria" target="_blank" rel="noopener noreferrer" title="Meu GitHub">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="32" height="32" 
+                         style="vertical-align: middle; filter: invert(80%) sepia(100%) saturate(750%) hue-rotate(180deg) brightness(90%) contrast(90%);">
+                    <span style="margin-left: 8px; font-weight: bold; color: var(--color-accent); font-size: 1.2rem;">Meu GitHub</span>
+                </a>
+            </div>
+            <!-- Lista de projetos com links para cada um -->
+            <ul style="list-style: none; padding-left: 0; margin-top: 1rem;">
+                <li style="margin-bottom: 0.7rem;">
+                    <a href="https://emilyvitoria.github.io/frases-aleatorias/" target="_blank" rel="noopener noreferrer" 
+                       style="color: var(--color-accent); text-decoration: none; font-weight: 600;">
+                        Frases Aleatórias da Internet™ (JavaScript)
+                    </a>
+                </li>
+            </ul>
+            <ul style="list-style: none; padding-left: 0; margin-top: 1rem;">
+                <li style="margin-bottom: 0.7rem;">
+                    <a href="https://github.com/EmilyVitoria/conversor-moedas-python" target="_blank" rel="noopener noreferrer" 
+                       style="color: var(--color-accent); text-decoration: none; font-weight: 600;">
+                        Conversor de Moedas (Python + Tkinter)
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Seção Contato com formulário simples -->
+    <section id="contato">
+        <h1>Entre em Contato</h1> <!-- Título da seção -->
+        <p>Preencha o formulário abaixo para enviar uma mensagem.</p>
+
+        <form>
+            <!-- Campo para nome -->
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <!-- Campo para email -->
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="seu.email@exemplo" required>
+            </div>
+            <!-- Campo para mensagem -->
+            <div>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui" required></textarea>
+            </div>
+            <!-- Botão para enviar o formulário -->
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </section>
+</main>
+    
+<footer>
+    <!-- Rodapé com direitos autorais -->
+    <p>&copy; 2025 Emily Muniz. Todos os direitos reservados.</p>
+</footer>
+    
+<script src="portfolio.js"></script> <!-- Link para arquivo JS externo (se tiver scripts) -->
+</body>
+</html>

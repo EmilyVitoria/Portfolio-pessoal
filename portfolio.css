@@ -1,0 +1,277 @@
+/* Variáveis CSS para cores, fontes e estilos globais */
+:root {
+    --color-bg-primary: #1a1a2e;          /* Fundo principal escuro */
+    --color-bg-secondary: #1f1f2e;        /* Fundo secundário para seções */
+    --color-card: #2a2a3e;                 /* Fundo dos cards e inputs */
+    --color-accent: #00e676;               /* Cor de destaque (verde neon) */
+    --color-accent-hover: #00c853;         /* Cor de destaque no hover */
+    --color-text-main: #e0e0e0;            /* Cor do texto principal */
+    --color-footer: #11111d;                /* Fundo do rodapé */
+    --font-heading: 'Merriweather', serif; /* Fonte para títulos */
+    --font-body: 'Open Sans', sans-serif;  /* Fonte para textos gerais */
+}
+
+/* Reset básico para margens, paddings e box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais para o corpo da página */
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-main);
+    line-height: 1.6;                 /* Espaçamento entre linhas */
+    scroll-behavior: smooth;          /* Rolagem suave ao navegar */
+}
+
+/* Links sem sublinhado e herdam cor do texto */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 2. NAVEGAÇÃO */
+
+/* Cabeçalho fixo no topo, com sombra para destaque */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg-primary);
+    z-index: 999;                    /* Fica sobre tudo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Espaço para ajustar o scroll, evitando que o conteúdo fique atrás do header */
+main section {
+    scroll-margin-top: 80px;         /* Altura do header para ancoragem */
+}
+
+/* Lista do menu como flex horizontal centralizado com espaçamento */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;                /* Remove bolinhas */
+    gap: 30px;                      /* Espaço entre os itens */
+}
+
+/* Links do menu com cor principal e negrito */
+nav ul li a {
+    color: var(--color-text-main);
+    font-weight: bold;
+    transition: color 0.3s;         /* Transição suave na cor */
+}
+
+/* Efeito hover nos links do menu com cor de destaque */
+nav ul li a:hover {
+    color: var(--color-accent);
+}
+
+/* 3. HOME */
+
+/* Estilo da seção inicial: altura total da tela, fundo secundário, centralizado */
+#home {
+    height: 100vh;
+    background-color: var(--color-bg-secondary);
+    margin: 30px auto;              /* Centraliza horizontalmente com margem */
+    max-width: 1000px;
+    padding: 60px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;        /* Centraliza verticalmente */
+    align-items: center;            /* Centraliza horizontalmente */
+    position: relative;
+    text-align: center;
+}
+
+/* Camada escurecida semi-transparente sobre o #home */
+#home::before {
+    content: '';
+    position: absolute;
+    inset: 0;                      /* Cobre toda a área do #home */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;                    /* Atrás do conteúdo */
+}
+
+/* Conteúdo real do home em cima da camada escura */
+.home-content {
+    z-index: 2;                    /* Sobre a camada escura */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+/* Foto de perfil arredondada com borda e sombra */
+.profile-pic {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;            /* Círculo */
+    border: 5px solid rgba(255, 255, 255, 0.9);
+    object-fit: cover;             /* Corta a imagem proporcionalmente */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+/* Aumenta levemente a foto no hover */
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* Ajustes responsivos para a foto de perfil em telas menores */
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Título principal do home com fonte especial, cor de destaque e sombra */
+.home-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3em;
+    color: var(--color-accent);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+/* Subtítulo com tamanho menor e cor clara */
+.home-content h2 {
+    font-size: 1.5em;
+    color: var(--color-text-main);
+}
+
+/* 4. SEÇÕES GERAIS */
+
+/* Estilo das seções internas com fundo secundário, borda arredondada e sombra */
+main section {
+    background-color: var(--color-bg-secondary);
+    margin: 30px auto;
+    max-width: 1000px;
+    padding: 60px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Título das seções com cor de destaque e espaçamento */
+main section h1 {
+    font-size: 2em;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+/* Parágrafos com espaçamento inferior e cor do texto */
+main section p {
+    margin-bottom: 15px;
+    color: var(--color-text-main);
+}
+
+/* 5. FORMULÁRIO */
+
+/* Formulário com layout vertical e espaçamento entre os campos */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels em negrito e com cor de destaque */
+form label {
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+/* Inputs e textareas com fundo escuro, borda suave e cantos arredondados */
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid var(--color-card);
+    background: var(--color-card);
+    color: var(--color-text-main);
+    border-radius: 5px;
+}
+
+/* Foco nos campos com borda destacada */
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+/* Botão com fundo verde neon, texto branco, cantos arredondados e cursor pointer */
+form button {
+    background: var(--color-accent);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Efeito hover no botão com tom mais escuro do verde */
+form button:hover {
+    background: var(--color-accent-hover);
+}
+
+/* 6. RODAPÉ */
+
+/* Rodapé escuro com texto claro, alinhado ao centro, e espaçamento */
+footer {
+    background: var(--color-footer);
+    color: var(--color-text-main);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* 7. RESPONSIVIDADE */
+
+/* Menu vertical em telas médias, ajustes em fonte e foto */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .home-content h1 {
+        font-size: 2.2em;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Ajustes para telas pequenas: padding e fontes menores */
+@media (max-width: 480px) {
+    main section {
+        padding: 40px 15px;
+    }
+
+    form input, form textarea {
+        font-size: 0.9em;
+    }
+}
+
+    /* Estilo para seção ativa no menu (borda lateral verde e fundo secundário) */
+.active-section {
+    border-left: 5px solid var(--color-accent);
+    background-color: var(--color-bg-secondary);
+    transition: all 0.4s ease-in-out;
+}
+
+
